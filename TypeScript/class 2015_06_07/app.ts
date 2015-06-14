@@ -1,8 +1,12 @@
-let myType1 : number = 1;
 
-let myType = <any> { name: "Zia", id: 1 };
-myType = { name : "Zia" }
-myType = {id : 1}
+/*
+let a = 2;
+if(false){
+	a = 1
+}
+a
+*/
+
 
 /*let myType = { name: "Zia", id: 1 };
 myType = { id: 2,  name: "Tom" };// can only assign a type which has the at least the same properties
