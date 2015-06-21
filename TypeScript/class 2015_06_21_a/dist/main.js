@@ -1,0 +1,1 @@
+var Color;!function(e){e[e.red=0]="red",e[e.blue=1]="blue",e[e.green=2]="green"}(Color||(Color={}));
