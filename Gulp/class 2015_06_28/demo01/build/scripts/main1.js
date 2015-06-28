@@ -1,0 +1,1 @@
+var __extends=this.__extends||function(n,t){function e(){this.constructor=n}for(var r in t)t.hasOwnProperty(r)&&(n[r]=t[r]);e.prototype=t.prototype,n.prototype=new e},Human=function(){function n(n,t){this.name=n,this.age=t}return n}(),Mahajir=function(n){function t(){n.apply(this,arguments)}return __extends(t,n),t}(Human),h1=new Human("Rehan",24);h1=new Mahajir("Rehan",24);
