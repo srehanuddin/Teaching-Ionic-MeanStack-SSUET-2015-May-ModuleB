@@ -1,1 +1,3 @@
-var ab=10,ab1=10,ab2=10;
+var ab = 10;
+var ab1 = 10;
+var ab2 = "10";

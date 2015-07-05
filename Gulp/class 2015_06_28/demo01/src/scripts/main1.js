@@ -1,1 +1,25 @@
-var __extends=this.__extends||function(n,t){function e(){this.constructor=n}for(var r in t)t.hasOwnProperty(r)&&(n[r]=t[r]);e.prototype=t.prototype,n.prototype=new e},Human=function(){function n(n,t){this.name=n,this.age=t}return n}(),Mahajir=function(n){function t(){n.apply(this,arguments)}return __extends(t,n),t}(Human),h1=new Human("Rehan",24);h1=new Mahajir("Rehan",24);
+var __extends = this.__extends || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    __.prototype = b.prototype;
+    d.prototype = new __();
+};
+var Human = (function () {
+    function Human(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+    return Human;
+})();
+var Mahajir = (function (_super) {
+    __extends(Mahajir, _super);
+    function Mahajir() {
+        _super.apply(this, arguments);
+    }
+    return Mahajir;
+})(Human);
+var h1 = new Human("Rehan", 24);
+h1 = new Mahajir("Rehan", 24);
+{
+    var a = 1;
+}

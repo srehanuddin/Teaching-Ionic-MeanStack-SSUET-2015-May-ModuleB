@@ -10,7 +10,7 @@ gulp.task("transpile", function(){
         		.pipe(clean({force: true}))*/
 			this.emit('end');
 		})
-		.pipe(uglify())
+		//.pipe(uglify())
 		.pipe(gulp.dest("src/scripts/"));
 });
 
