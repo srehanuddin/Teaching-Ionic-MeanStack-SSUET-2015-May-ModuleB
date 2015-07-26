@@ -4,6 +4,20 @@ var __extends = this.__extends || function (d, b) {
     __.prototype = b.prototype;
     d.prototype = new __();
 };
+var abc = (function () {
+    function abc() {
+    }
+    abc.prototype.fn = function () {
+        alert(abc.a);
+    };
+    abc.a = 10;
+    return abc;
+})();
+var a = new abc();
+a.fn();
+abc.a = 11;
+a = new abc();
+a.fn();
 var RobotHand = (function () {
     function RobotHand() {
     }
