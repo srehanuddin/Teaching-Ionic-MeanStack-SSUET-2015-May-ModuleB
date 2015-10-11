@@ -1,0 +1,50 @@
+<html>
+
+<style>
+input[type="text"] {
+	margin : 3px 10px;
+	border-radius : 5px;
+	width : 50%;
+	height  : 50px;
+	font-size : 30px;
+}
+input[type="submit"] {
+	margin : 3px 10px;
+	border-radius : 5px;
+	height  : 50px;
+	font-size : 30px;
+}
+</style>
+<body>
+
+<div>
+<form action="/search" method="get">
+<input type="text" name="q" placeholder="Enter User Name" />
+<br>
+<input type="submit" name="submit" value="Search" />
+</form>
+</div>
+
+<div id="products"></div>
+
+
+
+</body>
+
+<script>
+
+var products = [
+	{id : 1, product : "A"},
+	{id : 2, product : "B"},
+	{id : 3, product : "C"}
+]
+
+var html = "";
+for(var i = 0; i < products.length; i++){
+	html += "<div><a href='/product/" + products[i].id + "'  >" +products[i].product + "</a></div>"; 
+}
+
+document.getElementById("products").innerHTML = html;
+
+</script>
+</html>
