@@ -1,0 +1,46 @@
+<html>
+
+<style>
+input[type="text"] {
+	margin : 3px 10px;
+	border-radius : 5px;
+	width : 50%;
+	height  : 50px;
+	font-size : 30px;
+}
+input[type="submit"] {
+	margin : 3px 10px;
+	border-radius : 5px;
+	height  : 50px;
+	font-size : 30px;
+}
+</style>
+<body>
+
+<div>
+<form action="/" method="post">
+<input type="text" name="todo" placeholder="Enter Task Here" />
+<br>
+<input type="submit" name="submit" value="Submit" />
+</form>
+</div>
+
+<div id="todosDiv"></div>
+
+
+</body>
+
+<script>
+
+var todos = <%- todos %>
+
+var html = "";
+for(var i = 0; i < todos.length; i++){
+    html += "<div>" + todos[i].todo + " : <a href='/detetetodo/" + todos[i].id +"' >Delete</a></div>"; 
+} 
+	
+document.getElementById("todosDiv").innerHTML = html;
+
+
+</script>
+</html>
