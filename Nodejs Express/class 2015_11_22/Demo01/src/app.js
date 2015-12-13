@@ -27,6 +27,18 @@ app.get("/postdata", function (req, res) {
     //res.write(req.query)
     res.render("./postdata");
 });
+
+app.use("/", function(req, res, next){
+    console.log("A");
+    next()
+});
+
+
+app.use(function(req, res, next){
+    console.log("B")
+    res.send("B");
+});
+
 app.post("/postdata", function (req, res) {
     //res.send(req.body)
     if (req.body.user == "rehan") {
