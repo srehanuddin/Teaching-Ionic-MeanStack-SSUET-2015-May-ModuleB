@@ -1,0 +1,6 @@
+[submodule "Nodejs Express/class 2015_12_27 - Server Deployment/Demo01"]
+	path = Nodejs Express/class 2015_12_27 - Server Deployment/Demo01
+	url = E:\\OB\\SSUET\\Module B - 2015 May\\Nodejs Express\\class 2015_12_27 - Server Deployment\\Demo01
+[submodule "Nodejs Express/class 2015_12_27 - Server Deployment/node-js-getting-started"]
+	path = Nodejs Express/class 2015_12_27 - Server Deployment/node-js-getting-started
+	url = ../../heroku/node-js-getting-started.git
