@@ -22,8 +22,14 @@
 		<th> Active/Inactive Task </th>
 		<th> Remove Task </th>
 	</thead>
-	<tbody>
-		<tr *ngFor="#a of tasks; #num = index" [tasks]="a" *ngIf="tasks.show">
+
+    <tbody>
+        <tr *ngIf="loadingTasks"><td colspan="4">Loading Task</td></tr>
+		<tr class="myCom" *ngFor="#a of tasks; #num = index" [tasks]="a"  (deleteEvent)="deleteTask($event)"  *ngIf="tasks.show">
 		</tr>
 	</tbody>
 </table>
+
+<button type="button" (click)="makeRequest()">Make Request</button>
+<div *ngIf="loading">loading...</div>
+<pre>{{data | json}}</pre>
