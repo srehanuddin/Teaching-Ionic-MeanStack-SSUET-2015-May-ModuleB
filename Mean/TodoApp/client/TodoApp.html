@@ -1,0 +1,29 @@
+<form class="ui large from segment" style="text-align: center">
+	<h2 class="ui header" style="font-size: 30px">Add Your Todo</h2>
+	<hr>
+	<div class="field">
+		<label for="task" class="inputLabel">Task name:</label><br>
+		<input type="text" name="task" class="formInput" #task>
+	</div>
+	
+	<div class="field">
+		<label for="Desp" class="inputLabel">What Todo :</label><br>
+		<textarea name="desp" style="width: 400px" #desp></textarea>
+	</div>
+	
+	<button class="ui positive right floated button" (click)="addTodo(task,desp)" style="font-size: 18px"> Add Todo </button>
+</form>
+
+<table class="ui celled table segment" style="margin: 50px auto 50px -200px;width: 1100px;">
+	<thead class="tr">
+
+		<th> Task Name </th>
+		<th> Description </th>
+		<th> Active/Inactive Task </th>
+		<th> Remove Task </th>
+	</thead>
+	<tbody>
+		<tr *ngFor="#a of tasks; #num = index" [tasks]="a" *ngIf="tasks.show">
+		</tr>
+	</tbody>
+</table>
