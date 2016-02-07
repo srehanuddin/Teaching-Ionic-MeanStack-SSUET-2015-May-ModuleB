@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+  <head>
+    <script>document.write('<base href="' + document.location + '" />');</script>
+    <!--<base href="/">-->
+    <title>ng-book 2: Angular 2 Router</title>
+  
+    
+    <script src="node_modules/es6-shim/es6-shim.js">
+
+    </script>
+    <script src="node_modules/angular2/bundles/angular2-polyfills.js">
+
+    </script>
+    <script src="node_modules/systemjs/dist/system.src.js">
+
+    </script>
+    <script src="node_modules/rxjs/bundles/Rx.js">
+
+    </script>
+    <script src="node_modules/angular2/bundles/angular2.dev.js">    </script>
+  </script>
+    <script src="node_modules/angular2/bundles/router.dev.js"></script>
+
+    <script>
+        System.config({
+            packages: {
+                app: {
+                    format: 'register',
+                    defaultExtension: 'js'
+                }
+            }
+        });
+        System.import('app/ts/app')
+        .then(null, console.error.bind(console));
+
+    </script>
+    
+    </head>
+
+<body>
+    <router-app>Loasdas</router-app>
+  </body>
+</html>

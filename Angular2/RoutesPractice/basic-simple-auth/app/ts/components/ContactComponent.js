@@ -9,35 +9,27 @@ System.register(['angular2/core'], function(exports_1) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
     var core_1;
-    var AppComponent;
+    var ContactComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
             }],
         execute: function() {
-            AppComponent = (function () {
-                function AppComponent() {
-                    this.abc = "ABC";
+            ContactComponent = (function () {
+                function ContactComponent() {
                 }
-                AppComponent.prototype.clickFn = function (elem) {
-                    console.log(this.abc);
-                    this.abc = elem.value;
-                    console.log(elem);
-                };
-                AppComponent = __decorate([
+                ContactComponent = __decorate([
                     core_1.Component({
-                        selector: 'my-app',
-                        template: '<h1>My First Angular 2 App</h1><input type="text" [(ngModel)]="abc"/>' +
-                            '<input type="text"  [(ngModel)]="abc" />' +
-                            '<button (click)="clickFn(i)" >Click Here</button>'
+                        selector: 'contact',
+                        template: "<h1>Contact Us</h1>"
                     }), 
                     __metadata('design:paramtypes', [])
-                ], AppComponent);
-                return AppComponent;
+                ], ContactComponent);
+                return ContactComponent;
             })();
-            exports_1("AppComponent", AppComponent);
+            exports_1("ContactComponent", ContactComponent);
         }
     }
 });
-//# sourceMappingURL=app.component.js.map
+//# sourceMappingURL=ContactComponent.js.map

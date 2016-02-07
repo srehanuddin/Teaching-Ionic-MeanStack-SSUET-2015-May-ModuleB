@@ -1,4 +1,4 @@
-System.register(['angular2/core'], function(exports_1) {
+System.register(["angular2/core", "./../../config", "angular2/router"], function(exports_1) {
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8,36 +8,35 @@ System.register(['angular2/core'], function(exports_1) {
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1;
-    var AppComponent;
+    var core_1, config_1, router_1;
+    var Menu;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
+            },
+            function (config_1_1) {
+                config_1 = config_1_1;
+            },
+            function (router_1_1) {
+                router_1 = router_1_1;
             }],
         execute: function() {
-            AppComponent = (function () {
-                function AppComponent() {
-                    this.abc = "ABC";
+            Menu = (function () {
+                function Menu() {
                 }
-                AppComponent.prototype.clickFn = function (elem) {
-                    console.log(this.abc);
-                    this.abc = elem.value;
-                    console.log(elem);
-                };
-                AppComponent = __decorate([
+                Menu = __decorate([
                     core_1.Component({
-                        selector: 'my-app',
-                        template: '<h1>My First Angular 2 App</h1><input type="text" [(ngModel)]="abc"/>' +
-                            '<input type="text"  [(ngModel)]="abc" />' +
-                            '<button (click)="clickFn(i)" >Click Here</button>'
+                        selector: 'menu',
+                        templateUrl: config_1.default.componentPath + 'menu/menu.html',
+                        directives: [router_1.ROUTER_DIRECTIVES]
                     }), 
                     __metadata('design:paramtypes', [])
-                ], AppComponent);
-                return AppComponent;
+                ], Menu);
+                return Menu;
             })();
-            exports_1("AppComponent", AppComponent);
+            exports_1("Menu", Menu);
         }
     }
 });
-//# sourceMappingURL=app.component.js.map
+//# sourceMappingURL=menu.js.map

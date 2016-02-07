@@ -9,35 +9,27 @@ System.register(['angular2/core'], function(exports_1) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
     var core_1;
-    var AppComponent;
+    var HomeComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
             }],
         execute: function() {
-            AppComponent = (function () {
-                function AppComponent() {
-                    this.abc = "ABC";
+            HomeComponent = (function () {
+                function HomeComponent() {
                 }
-                AppComponent.prototype.clickFn = function (elem) {
-                    console.log(this.abc);
-                    this.abc = elem.value;
-                    console.log(elem);
-                };
-                AppComponent = __decorate([
+                HomeComponent = __decorate([
                     core_1.Component({
-                        selector: 'my-app',
-                        template: '<h1>My First Angular 2 App</h1><input type="text" [(ngModel)]="abc"/>' +
-                            '<input type="text"  [(ngModel)]="abc" />' +
-                            '<button (click)="clickFn(i)" >Click Here</button>'
+                        selector: 'home',
+                        template: "<h1>Welcome!</h1>"
                     }), 
                     __metadata('design:paramtypes', [])
-                ], AppComponent);
-                return AppComponent;
+                ], HomeComponent);
+                return HomeComponent;
             })();
-            exports_1("AppComponent", AppComponent);
+            exports_1("HomeComponent", HomeComponent);
         }
     }
 });
-//# sourceMappingURL=app.component.js.map
+//# sourceMappingURL=HomeComponent.js.map

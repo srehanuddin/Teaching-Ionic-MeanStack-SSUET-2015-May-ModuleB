@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+
+<head>
+    <title> Angular 2 - Todo App</title>
+    <base href="/" />
+
+    <script src="es6-shim/es6-shim.js">
+    </script>
+    <script src="angular2/bundles/angular2-polyfills.js">
+    </script>
+    <script src="systemjs/dist/system.src.js">
+    </script>
+    <script src="rxjs/bundles/Rx.js">
+    </script>
+    <script src="angular2/bundles/angular2.dev.js"></script>
+    <script src="angular2/bundles/http.dev.js"></script>
+    <script src="angular2/bundles/router.dev.js"></script>
+
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" type="text/css" href="semantic-ui/dist/semantic.css">
+    <link rel="stylesheet" type="text/css" href="app.css">	
+	</head>
+	
+<body>
+	<script>
+        System.config({
+            packages: {
+                app: {
+                    format: 'register',
+                    defaultExtension: 'js'
+                }
+            }
+        });
+System.import('app/boot')
+    .then(null, console.error.bind(console));
+    </script>
+
+
+    
+        <my-app>Loading.......</my-app>
+
+
+</body>
+</html>	
