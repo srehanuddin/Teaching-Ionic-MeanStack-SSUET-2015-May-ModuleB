@@ -9,7 +9,7 @@ System.register(["angular2/core", "./../../config", "angular2/router"], function
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
     var core_1, config_1, router_1;
-    var Todos;
+    var Contact2;
     return {
         setters:[
             function (core_1_1) {
@@ -22,35 +22,28 @@ System.register(["angular2/core", "./../../config", "angular2/router"], function
                 router_1 = router_1_1;
             }],
         execute: function() {
-            Todos = (function () {
-                function Todos(routeParams) {
-                    this.routeParams = routeParams;
-                    this.todos = config_1.default.todos;
-                    this.id = routeParams.get("id");
-                    this.todo = this.todos[this.id];
+            Contact2 = (function () {
+                function Contact2() {
                 }
-                Todos = __decorate([
+                Contact2 = __decorate([
                     core_1.Component({
-                        selector: 'todos',
-                        templateUrl: config_1.default.componentPath + 'todos/todos.html',
+                        selector: 'contact-form',
+                        templateUrl: config_1.default.componentPath + 'contact2/contact.html',
                     }),
                     router_1.CanActivate(function (nextInstr, currInstr) {
-                        alert("asdas");
                         console.log(nextInstr);
                         console.log(currInstr);
-                        window.location.href = "http://google.com";
                         //let injector: any = Injector.resolveAndCreate([AuthService]);
                         //let authService: AuthService = injector.get(AuthService);
                         //return authService.isLogged();
                         return false;
                     }), 
-                    __metadata('design:paramtypes', [(typeof (_a = typeof router_1.RouteParams !== 'undefined' && router_1.RouteParams) === 'function' && _a) || Object])
-                ], Todos);
-                return Todos;
-                var _a;
+                    __metadata('design:paramtypes', [])
+                ], Contact2);
+                return Contact2;
             })();
-            exports_1("Todos", Todos);
+            exports_1("Contact2", Contact2);
         }
     }
 });
-//# sourceMappingURL=todos.js.map
+//# sourceMappingURL=contact.js.map

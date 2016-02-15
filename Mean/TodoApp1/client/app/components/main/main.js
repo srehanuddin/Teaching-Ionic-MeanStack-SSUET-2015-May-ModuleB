@@ -1,4 +1,4 @@
-System.register(["angular2/core", "./../../config", "angular2/router", "./../menu/menu", "./../home/home", "./../about/about", "./../todos/todos"], function(exports_1) {
+System.register(["angular2/core", "./../../config", "angular2/router", "./../menu/menu", "./../home/home", "./../about/about", "./../contact/contact", "./../todos/todos"], function(exports_1) {
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8,7 +8,7 @@ System.register(["angular2/core", "./../../config", "angular2/router", "./../men
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, config_1, router_1, menu_1, home_1, about_1, todos_1;
+    var core_1, config_1, router_1, menu_1, home_1, about_1, contact_1, todos_1;
     var MyApp;
     return {
         setters:[
@@ -30,12 +30,16 @@ System.register(["angular2/core", "./../../config", "angular2/router", "./../men
             function (about_1_1) {
                 about_1 = about_1_1;
             },
+            function (contact_1_1) {
+                contact_1 = contact_1_1;
+            },
             function (todos_1_1) {
                 todos_1 = todos_1_1;
             }],
         execute: function() {
             MyApp = (function () {
                 function MyApp() {
+                    this.todos = config_1.default.todos;
                 }
                 MyApp = __decorate([
                     core_1.Component({
@@ -47,6 +51,9 @@ System.register(["angular2/core", "./../../config", "angular2/router", "./../men
                         //{ path : "/",  redirectTo : ["Home"] },
                         { path: "/home", name: "Home", component: home_1.Home, useAsDefault: true },
                         { path: "/about", name: "About", component: about_1.About },
+                        { path: "/contact/...", name: "Contact", component: contact_1.Contact },
+                        //{ path : "/contact1", name: "Contact1", component : Contact1  },
+                        //{ path : "/contact2", name: "Contact2", component : Contact2  },
                         { path: "/todos/:id", name: "Todos", component: todos_1.Todos }
                     ]), 
                     __metadata('design:paramtypes', [])

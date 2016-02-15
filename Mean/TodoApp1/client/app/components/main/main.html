@@ -1,4 +1,8 @@
 <menu></menu>
 
+<ul>
+    <li *ngFor="#t of todos" [routerLink]='["/Todos", {id : t}]' >{{t}}</li>
+</ul>
+
 <router-outlet></router-outlet>
 

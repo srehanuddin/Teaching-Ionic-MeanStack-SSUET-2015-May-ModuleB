@@ -6,6 +6,10 @@ var app = express();
 // view engine setup
 app.set('views', path.join(__dirname, '/../../client'));
 //app.set('view engine', 'ejs'); 
+app.use(function (req, res, next) {
+    console.log("URL : " + req.url);
+    next();
+});
 app.use(express.static(path.join(__dirname, '/../../client')));
 app.use(express.static(path.join(__dirname, '/../../node_modules')));
 app.use(bodyParser.json()); // for parsing application/json

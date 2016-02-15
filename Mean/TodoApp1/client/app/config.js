@@ -6,6 +6,9 @@ System.register([], function(exports_1) {
             config = {
                 componentPath: "./app/components/",
                 servicePath: "./app/services/",
+                todos: [
+                    "A", "B", "C", "D"
+                ]
             };
             exports_1("default",config);
         }

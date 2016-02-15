@@ -11,6 +11,11 @@ var app : express.Express = express();
 app.set('views', path.join(__dirname, '/../../client'));
 //app.set('view engine', 'ejs'); 
 
+app.use(function (req, res, next) {
+    console.log("URL : " + req.url);
+    next();
+})
+
 app.use(express.static(path.join(__dirname, '/../../client')));
 app.use(express.static(path.join(__dirname, '/../../node_modules')));
 
