@@ -48,7 +48,12 @@ class RedditApp {
     
     onSubmit(form: any): void {
         console.log('you submitted value:', form);
-        
+
+        this.myForm =  this.fb.group({
+            'sku': ['', Validators.required],
+            'sku1': ['', Validators.required]
+        });
+		
     }
     
       
