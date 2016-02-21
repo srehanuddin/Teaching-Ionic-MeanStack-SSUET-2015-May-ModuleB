@@ -11,6 +11,8 @@ import {RouteParams, CanActivate} from "angular2/router"
 @CanActivate(
   (nextInstr: any, currInstr: any) => {
     
+    
+    
     alert("asdas");
     console.log(nextInstr)
     console.log(currInstr)
