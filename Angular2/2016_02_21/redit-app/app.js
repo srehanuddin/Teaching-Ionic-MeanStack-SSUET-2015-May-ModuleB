@@ -31,15 +31,29 @@ System.register(["angular2/platform/browser", "angular2/core", 'angular2/http', 
                     this.http = http;
                     this.fb = fb;
                     this.myForm = fb.group({
-                        'sku': ['ABC123', common_1.Validators.required],
-                        'sku1': ['ABC1234', common_1.Validators.required]
+                        sku: ['ABC123', common_1.Validators.required],
+                        sku1: ['ABC1234', common_1.Validators.required]
                     });
                     console.log(this.myForm.value);
+                }
+                RedditApp.prototype.onSubmit = function (event, form) {
+                    console.log('you submitted value:', form);
+                    /*
+                            this.myForm =  this.fb.group({
+                                'sku': ['', Validators.required],
+                                'sku1': ['', Validators.required]
+                            });
+                            
+                            
+                            */
+                    this.fb.control({
+                        'sku': ""
+                    });
                     this.sku = this.myForm.controls['sku'];
                     this.sku.updateValueAndValidity("");
-                }
-                RedditApp.prototype.onSubmit = function (form) {
-                    console.log('you submitted value:', form);
+                    this.sku.updateValueAndValidity("123");
+                    console.log(this.myForm.controls.sku.value);
+                    this.myForm.controls.sku.value = "Test";
                 };
                 RedditApp = __decorate([
                     core_1.Component({
@@ -47,7 +61,7 @@ System.register(["angular2/platform/browser", "angular2/core", 'angular2/http', 
                         host: {
                             class: "myClass"
                         },
-                        template: "\n<div class=\"ui raised segment\">\n    <h2 class=\"ui header\">Demo Form: Sku</h2>\n    <form [ngFormModel]=\"myForm\" (ngSubmit)=\"onSubmit(myForm.value)\" class=\"ui form\">\n\n        <div class=\"field\" >\n            <label for=\"skuInput\">SKU </label>\n            <input type=\"text\" id=\"skuInput\" placeholder=\"SKU\" ngControl=\"sku\">\n        </div>\n        <div class=\"field\">\n            <label for=\"skuInput\">SKU</label>\n            <input type=\"text\" id=\"skuInput\" placeholder=\"SKU\" ngControl=\"sku1\">\n        </div>\n\n        <button type=\"submit\" class=\"ui button\">Submit</button>\n    </form>\n</div>\n    "
+                        template: "\n<div class=\"ui raised segment\">\n    <h2 class=\"ui header\">Demo Form: Sku</h2>\n    <form [ngFormModel]=\"myForm\" (ngSubmit)=\"onSubmit($event, myForm.value)\" class=\"ui form\">\n\n        <div class=\"field\" >\n            <label for=\"skuInput\">SKU </label>\n            <input type=\"text\" id=\"skuInput\" placeholder=\"SKU\" [ngFormControl]=\"myForm.controls['sku']\" >\n        </div>\n        <div class=\"field\">\n            <label for=\"skuInput\">SKU</label>\n            <input type=\"text\" id=\"skuInput\" placeholder=\"SKU\" ngControl=\"sku1\">\n        </div>\n\n        <button type=\"submit\" class=\"ui button\">Submit</button>\n    </form>\n</div>\n    "
                     }), 
                     __metadata('design:paramtypes', [http_2.Http, common_1.FormBuilder])
                 ], RedditApp);

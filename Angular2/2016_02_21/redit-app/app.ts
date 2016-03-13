@@ -13,11 +13,11 @@ import { FormBuilder, ControlGroup, Validators, AbstractControl } from 'angular2
     template: `
 <div class="ui raised segment">
     <h2 class="ui header">Demo Form: Sku</h2>
-    <form [ngFormModel]="myForm" (ngSubmit)="onSubmit(myForm.value)" class="ui form">
+    <form [ngFormModel]="myForm" (ngSubmit)="onSubmit($event, myForm.value)" class="ui form">
 
         <div class="field" >
             <label for="skuInput">SKU </label>
-            <input type="text" id="skuInput" placeholder="SKU" ngControl="sku">
+            <input type="text" id="skuInput" placeholder="SKU" [ngFormControl]="myForm.controls['sku']" >
         </div>
         <div class="field">
             <label for="skuInput">SKU</label>
@@ -37,22 +37,36 @@ class RedditApp {
     constructor(public http: Http, public fb: FormBuilder){
 
         this.myForm =  fb.group({
-            'sku': ['ABC123', Validators.required],
-            'sku1': ['ABC1234', Validators.required]
+            sku: ['ABC123', Validators.required],
+            sku1: ['ABC1234', Validators.required]
         });
         
         console.log(this.myForm.value)
-        this.sku = this.myForm.controls['sku'];
-        this.sku.updateValueAndValidity("");
+        
     } 
     
-    onSubmit(form: any): void {
+    onSubmit(event, form: any): void {
         console.log('you submitted value:', form);
-
+/*
         this.myForm =  this.fb.group({
             'sku': ['', Validators.required],
             'sku1': ['', Validators.required]
         });
+        
+        
+        */
+        
+        this.fb.control({
+            'sku' : ""
+        })
+        
+        
+        this.sku = this.myForm.controls['sku'];
+        this.sku.updateValueAndValidity("");
+        this.sku.updateValueAndValidity("123");
+        
+        console.log(this.myForm.controls.sku.value);
+        this.myForm.controls.sku.value = "Test";
 		
     }
     

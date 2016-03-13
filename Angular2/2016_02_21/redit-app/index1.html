@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title>
+            MyTodo App
+            </title>
+            
+            <script src="node_modules/es6-shim/es6-shim.js"></script>
+    <script src="node_modules/angular2/bundles/angular2-polyfills.js"></script>
+    <script src="node_modules/systemjs/dist/system.src.js"></script>
+    <script src="node_modules/rxjs/bundles/Rx.js"></script>
+    <script src="node_modules/angular2/bundles/angular2.dev.js"></script>
+    <script src="node_modules/angular2/bundles/http.dev.js"></script>
+    <script src="node_modules/angular2/bundles/router.dev.js"></script>
+    <base href = "/">
+            
+             <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+    </head>
+    <body>
+        
+        <script>
+        System.config({
+            packages: {
+                app: {
+                    format: 'register',
+                    defaultExtension: 'js'
+                }
+            }
+        });
+System.import('app/validating.js')
+      .then(null, console.error.bind(console));
+    </script>
+        <validating>Loading..</validating>
+    </body>
+</html>
