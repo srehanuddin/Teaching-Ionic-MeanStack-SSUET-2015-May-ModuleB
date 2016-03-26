@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+
+<head>
+    <title> Angular 2 - Simple Reddit</title>
+<script src="node_modules/angular2/bundles/angular2-polyfills.js">
+    <script src="node_modules/es6-shim/es6-shim.js">
+
+    </script>
+    
+
+    </script>
+    <script src="node_modules/systemjs/dist/system.src.js">
+
+    </script>
+    <script src="node_modules/rxjs/bundles/Rx.js">
+
+    </script>
+    <script src="node_modules/angular2/bundles/angular2.dev.js">    </script>
+    <script src="node_modules/angular2/bundles/http.dev.js">    </script>
+
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" type="text/css" href="resources/vendor/semantic.min.css">
+
+</head>
+
+<body>
+
+    <script>
+        System.config({
+            map: {
+                firebase: 'node_modules/firebase/lib/firebase-web.js',
+                angularfire2: 'node_modules/angularfire2'
+            },
+            packages: {
+                app: {
+                    format: 'register',
+                    defaultExtension: 'js'
+                },
+                angularfire2: {
+                    defaultExtension: 'js',
+                    main: 'angularfire2.js'
+                }
+            }
+        });
+System.import('app.js')
+    .then(null, console.error.bind(console));
+    
+    
+
+    </script>
+
+    <!-- Menu Bar -->
+    <div class="ui menu">
+        <div class="ui container">
+            <a href="#" class="header item">
+                <img class="logo" src="resources/images/ng-book-2-minibook.png"> ng-book 2
+            </a>
+            <div class="header item borderless">
+                <h1 class="ui header">
+            Angular 2 Simple Reddit
+          </h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="ui main text container">
+        <reddit></reddit>
+        <!-- <--- Our app loads here! -->
+    </div>  
+
+
+</body>
+
+</html>
