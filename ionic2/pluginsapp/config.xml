@@ -36,13 +36,10 @@
     <allow-intent href="itms:*"/>
     <allow-intent href="itms-apps:*"/>
   </platform>
-  <feature name="SplashScreen">
-    <param name="android-package" value="org.apache.cordova.splashscreen.SplashScreen"/>
-  </feature>
   <feature name="StatusBar">
     <param name="ios-package" onload="true" value="CDVStatusBar"/>
   </feature>
-    <preference name="SplashScreen" value="screen.png" />
+    <preference name="SplashScreen" value="screen" />
   <preference name="SplashScreenDelay" value="10000" />
   <preference name="webviewbounce" value="false"/>
   <preference name="UIWebViewBounce" value="false"/>
