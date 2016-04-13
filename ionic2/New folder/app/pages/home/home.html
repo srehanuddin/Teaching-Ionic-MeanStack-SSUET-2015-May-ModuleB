@@ -1,0 +1,32 @@
+<ion-navbar *navbar>
+  <ion-title>
+    Home
+  </ion-title>
+</ion-navbar>
+
+<ion-content class="home">
+  <ion-card>
+    <ion-card-header>
+      Card Header
+    </ion-card-header>
+    <ion-card-content>
+      <button block primary (click)="getUserLocation()">Get Location</button> 
+      <button block primary (click)="getDeviceInfo()">Get Device Info</button> 
+      <button block primary (click)="getPicture()">Get Picture</button> 
+    </ion-card-content>
+  </ion-card>
+  
+  <ion-card *ngIf="imageData">
+  <img  src="{{imageData}}"/>
+  <ion-card-content>
+    <ion-card-title>
+      Nine Inch Nails Live
+      </ion-card-title>
+    <p>
+      The most popular industrial group ever, and largely
+      responsible for bringing the music to a mass audience.
+    </p>
+  </ion-card-content>
+</ion-card>
+  
+</ion-content>

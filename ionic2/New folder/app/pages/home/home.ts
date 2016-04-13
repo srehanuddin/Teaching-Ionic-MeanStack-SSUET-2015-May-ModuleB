@@ -10,23 +10,21 @@ import {Device} from 'ionic-native';
   templateUrl: 'build/pages/home/home.html'
 })
 export class HomePage {
-  category = false;
-  
-  categories = [
-      "Cars",
-      "Cell Phones",
-      "Electronics",
-      "Laptops",
-      "Camera"
-  ]
+  imageData
   
   constructor() {
 
   }
   
-  categoryToggle(){
-      console.log(this.category)
-      this.category = this.category ? false : true;
+  getUserLocation(){
+      alert("Test");
+      
+      
+      Geolocation.getCurrentPosition().then((resp) => {
+        //resp.coords.latitude
+        //resp.coords.longitude
+        console.log(resp)
+      })
   }
   
   getDeviceInfo(){
