@@ -1,0 +1,43 @@
+<ion-navbar primary *navbar>
+  <ion-title >
+    Post Advertise
+  </ion-title>
+</ion-navbar>
+
+
+    
+    
+
+<ion-content > 
+
+  <ion-list>
+
+  <ion-item>
+    <ion-label fixed>Title</ion-label>
+    <ion-input type="text" value="" #Title></ion-input>
+  </ion-item>
+  
+  <ion-item>
+    <ion-label fixed>Description</ion-label>
+    <ion-input type="text" value=""  #Description></ion-input>
+  </ion-item>
+  
+  <ion-item>
+    <ion-label fixed>Price</ion-label>
+    <ion-input type="text" value="" #Price></ion-input>
+  </ion-item>
+  
+  <ion-item>
+     <img src="{{image}}">
+    <br>
+    <button block large (click)="captureImage()" >Capture</button>
+  </ion-item>
+  
+  <ion-item>
+    <button block large (click)="createAd(Title, Description, Price)" >Save</button>
+  </ion-item>
+
+
+</ion-list>
+  
+</ion-content>

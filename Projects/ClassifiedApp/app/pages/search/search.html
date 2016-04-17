@@ -1,6 +1,6 @@
 <ion-navbar primary *navbar>
   <ion-title >
-    Classified App
+    Search
   </ion-title>
 </ion-navbar>
 
@@ -16,7 +16,7 @@
             </button>
         </ion-col>
         <ion-col width-20>
-            <button full (click)="gotoPage(_SearchPage)">
+            <button full>
                 <ion-icon name="md-search"></ion-icon>
             </button>
         </ion-col>
@@ -40,9 +40,7 @@
         <ion-list-header>
             Categories
         </ion-list-header>
-        <ion-item *ngFor="#cat of categories" (click)="gotoAdsPage(cat)">
-            {{cat}}
-        </ion-item>
+        <ion-item *ngFor="#cat of categories">{{cat}}</ion-item>
     </ion-list>
     
   

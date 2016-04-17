@@ -1,27 +1,32 @@
-import {Page} from 'ionic-angular';
-import {Geolocation} from 'ionic-native';
+import {Page, NavController} from 'ionic-angular';
 
-import {Camera} from 'ionic-native';
+//PAGES
+import {AdAddPage}  from './../ad_add/ad_add';
+import {SearchPage}  from './../search/search';
+import {AdsPage}  from './../ads/ads';
 
-import {Device} from 'ionic-native';
-
+//Services 
+import {AdService, CategoriesService} from './../../services/app.services';
 
 @Page({
   templateUrl: 'build/pages/home/home.html'
 })
 export class HomePage {
+    
+  //Pages
+  _AdAddPage = AdAddPage;
+  _SearchPage = SearchPage;
+  
   category = false;
+  categories: string[];
   
-  categories = [
-      "Cars",
-      "Cell Phones",
-      "Electronics",
-      "Laptops",
-      "Camera"
-  ]
-  
-  constructor() {
-
+  constructor(
+      public nav : NavController, 
+      public _AdService : AdService,
+      public _CategoriesService : CategoriesService
+      ) {
+      
+      this.categories = this._CategoriesService.getCategories();
   }
   
   categoryToggle(){
@@ -29,31 +34,14 @@ export class HomePage {
       this.category = this.category ? false : true;
   }
   
-  getDeviceInfo(){
-      alert('Device UUID is: ' + Device.device.uuid);
-      console.log(Device);
-      console.log(Device.device);
+  gotoPage(page){
+      this.nav.push(page);
   }
   
-  getPicture(){
-      alert("Get Picture Called");
-      let option = {
-          destinationType : Camera["DestinationType"].DATA_URL,
-          allowEdit : false,
-          targetWidth : 50
-      }
-      
-      Camera.getPicture(option).then((imageData) => {
-    // imageData is either a base64 encoded string or a file URI
-    // If it's base64:
-    //"data:image/jpeg;base64," + 
-    let base64Image = imageData;
-    this.imageData = base64Image;
-        alert(base64Image);
-    
-    }, (err) => {
-    });
-      
+  gotoAdsPage(category){
+      console.log(category);
+      this.nav.push(AdsPage);
   }
   
+
 }
